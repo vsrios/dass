@@ -69,8 +69,8 @@ x_observations = [0, 2, 4, 6, 8]
 # case with  std = 0.001
 observations = [
     (
-        poly(a_t, b_t, c_t, x) + rng.normal(loc=0, scale=0.001 * poly(a_t, b_t, c_t, x)),
-        0.001 * poly(a_t, b_t, c_t, x),
+        poly(a_t, b_t, c_t, x) + rng.normal(loc=0, scale=0.001),
+        0.001,
         x,
     )
     for x in x_observations

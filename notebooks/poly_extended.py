@@ -635,9 +635,66 @@ ax.plot(x_plot, poly(a_t, b_t, c_t, x_plot))
 ax.plot(d.index.get_level_values("x"), d.value.values, "o")
 
 ax.grid()
+
+# +
+from numpy.polynomial.polynomial import polyfit
+import matplotlib.pyplot as plt
+
+N = 10
+x = np.random.randn(N)
+y = np.random.randn(N)
+
+plt.hist(x)
+plt.show()
+
+plt.hist(y)
+plt.show()
+
+
+
+
+# Fit with polyfit
+b, m = polyfit(x, y, 1)
+
+#import numpy as np
+
+plt.plot(x, y, '.')
+plt.plot(x, b + m * x, '-')
+plt.show()
+
+# +
+
+
+
+from numpy.polynomial.polynomial import polyfit
+import matplotlib.pyplot as plt
+
+N = 10000
+x = np.random.randn(N)
+y = np.random.randn(N)
+
+fig, ax = plt.subplots(nrows=1, ncols=3)
+fig.set_size_inches(20, 8)
+
+ax[0].hist(x)
+# plt.show()
+
+ax[1].hist(y)
+# plt.show()
+
+
+
+
+# Fit with polyfit
+b, m = polyfit(x, y, 1)
+
+#import numpy as np
+
+ax[2].plot(x, y, '.')
+ax[2].plot(x, b + m * x, '-')
+# plt.show()
+fig.tight_layout()
 # -
-
-
 
 
 
